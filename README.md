@@ -25,6 +25,13 @@ Hybrid data analytics project to predict churn early by combining transactional 
 6. Calculate health score: `python -m src.health_score`
 7. Export for Power BI: `python -m dashboard.power_bi_export`
 
+## One-command execution
+- Synthetic data end-to-end: `python -m src.run_pipeline`
+- Real data end-to-end:
+	- Add CSV files to `data/external`: `transactions.csv`, `support_tickets.csv`, `social_mentions.csv`
+	- Load and validate files: `python -m src.data_loader`
+	- Run pipeline without synthetic generation: `python -m src.run_pipeline --skip-generate`
+
 ## Suggested Environment
 ```powershell
 python -m venv .venv
