@@ -1,15 +1,17 @@
 # Notebooks Guide
 
-Use these notebooks as analysis layers on top of the reusable modules in `src/`.
+The project now uses only 2 notebooks.
 
-## Suggested notebook sequence
-1. `01_data_generation.ipynb` - run synthetic generation and inspect schema.
-2. `02_eda.ipynb` - profile transactions and support/social volumes.
-3. `03_sentiment.ipynb` - inspect sentiment distributions and edge cases.
-4. `04_features.ipynb` - validate engineered features and churn label logic.
-5. `05_modeling.ipynb` - compare model metrics and inspect feature importance.
-6. `06_health_score.ipynb` - segment customers and prepare BI extracts.
+## Notebook list
+1. `01_end_to_end_pipeline.ipynb`
+- Runs the complete pipeline in one place.
+- Supports public TWCS dataset if available locally.
+- Produces all artifacts, including Power BI export.
+
+2. `02_analysis_visuals.ipynb`
+- Focused on analysis and storytelling.
+- Includes charts for health distribution, economic impact, and action prioritization.
 
 ## CLI alternatives
 - Full synthetic run: `python -m src.run_pipeline`
-- Use real data in `data/external`: `python -m src.data_loader` then `python -m src.run_pipeline --skip-generate`
+- Public TWCS run: `python -m src.twitter_kaggle_adapter --max-rows 120000` then `python -m src.run_pipeline --skip-generate`

@@ -1,5 +1,14 @@
 # Customer Health Score 3.0
 
+[![CI](https://img.shields.io/github/actions/workflow/status/juliyonose7/customer-health-score-3-0/ci.yml?branch=main&label=CI)](https://github.com/juliyonose7/customer-health-score-3-0/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![Scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-NLP-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/)
+[![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
+[![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
+[![Kaggle TWCS](https://img.shields.io/badge/Kaggle-TWCS-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/thoughtvector/customer-support-on-twitter)
+
 Hybrid data analytics project to predict churn early by combining transactional behavior with NLP sentiment analysis.
 
 ## Project Goals
