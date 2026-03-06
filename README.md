@@ -37,6 +37,13 @@ Hybrid data analytics project to predict churn early by combining transactional 
 - Run pipeline + tests in one script (PowerShell): `./scripts/run_all.ps1`
 - CI runs on `push` and `pull_request` using `.github/workflows/ci.yml`
 
+## Docker
+- Build lightweight image: `docker build -t customer-health-score:latest .`
+- Run synthetic pipeline in container: `docker run --rm -v ${PWD}:/app customer-health-score:latest`
+- Optional full NLP dependencies during build:
+	- `docker build --build-arg INSTALL_FULL_NLP=1 -t customer-health-score:latest .`
+- PowerShell helper script: `./scripts/docker_run.ps1`
+
 ## Suggested Environment
 ```powershell
 python -m venv .venv
