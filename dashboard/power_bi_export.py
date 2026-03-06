@@ -14,6 +14,9 @@ def export_for_power_bi() -> Path:
     health = pd.read_csv(PROCESSED_DIR / "health_scores.csv")
     features = pd.read_csv(PROCESSED_DIR / "features.csv")
     metrics = pd.read_csv(PROCESSED_DIR / "model_metrics.csv")
+    value = pd.read_csv(PROCESSED_DIR / "customer_value.csv")
+    actions = pd.read_csv(PROCESSED_DIR / "customer_actions.csv")
+    scenarios = pd.read_csv(PROCESSED_DIR / "campaign_scenarios.csv")
     transactions = pd.read_csv(RAW_DIR / "transactions.csv")
 
     tx_summary = (
@@ -26,6 +29,9 @@ def export_for_power_bi() -> Path:
         health.to_excel(writer, sheet_name="HealthScores", index=False)
         features.to_excel(writer, sheet_name="Features", index=False)
         metrics.to_excel(writer, sheet_name="ModelMetrics", index=False)
+        value.to_excel(writer, sheet_name="CustomerValue", index=False)
+        actions.to_excel(writer, sheet_name="CustomerActions", index=False)
+        scenarios.to_excel(writer, sheet_name="CampaignScenarios", index=False)
         tx_summary.to_excel(writer, sheet_name="TransactionsSummary", index=False)
 
     print(f"Exported Power BI workbook: {export_path}")

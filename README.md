@@ -23,7 +23,9 @@ Hybrid data analytics project to predict churn early by combining transactional 
 4. Build features: `python -m src.features`
 5. Train models: `python -m src.model`
 6. Calculate health score: `python -m src.health_score`
-7. Export for Power BI: `python -m dashboard.power_bi_export`
+7. Calculate expected value: `python -m src.expected_value`
+8. Build action policy: `python -m src.action_policy`
+9. Export for Power BI: `python -m dashboard.power_bi_export`
 
 ## One-command execution
 - Synthetic data end-to-end: `python -m src.run_pipeline`
@@ -32,10 +34,22 @@ Hybrid data analytics project to predict churn early by combining transactional 
 	- Load and validate files: `python -m src.data_loader`
 	- Run pipeline without synthetic generation: `python -m src.run_pipeline --skip-generate`
 
+## Public Dataset (Kaggle TWCS)
+- Expected local path in this workspace: `../DS/twcs/twcs.csv`
+- Adapt TWCS to project schema:
+	- `python -m src.twitter_kaggle_adapter --max-rows 300000`
+- Run model pipeline over adapted files:
+	- `python -m src.run_pipeline --skip-generate`
+
 ## Quality Checks
 - Run tests: `pytest -q`
 - Run pipeline + tests in one script (PowerShell): `./scripts/run_all.ps1`
 - CI runs on `push` and `pull_request` using `.github/workflows/ci.yml`
+
+## Business Decision Layer
+- `customer_value.csv`: expected CLV saved, intervention cost, expected net value, expected ROI.
+- `customer_actions.csv`: next best action, action rationale, priority score, confidence.
+- `campaign_scenarios.csv`: estimated impact for top 5%, 10%, and 20% intervention strategies.
 
 ## Docker
 - Build lightweight image: `docker build -t customer-health-score:latest .`

@@ -50,3 +50,20 @@ def test_health_score_ranges_and_segments() -> None:
     valid_segments = {"Healthy", "At Risk", "Critical"}
     assert set(health["health_segment"].unique()).issubset(valid_segments)
     assert len(health["health_segment"].unique()) >= 2
+
+
+def test_expected_value_and_actions_outputs() -> None:
+    customer_value = pd.read_csv(PROCESSED_DIR / "customer_value.csv")
+    actions = pd.read_csv(PROCESSED_DIR / "customer_actions.csv")
+    scenarios = pd.read_csv(PROCESSED_DIR / "campaign_scenarios.csv")
+
+    assert "expected_net_value" in customer_value.columns
+    assert "expected_roi" in customer_value.columns
+    assert customer_value["score_confidence"].isin(["High", "Medium", "Low"]).all()
+
+    assert "next_best_action" in actions.columns
+    assert actions["next_best_action"].notna().all()
+    assert "priority_score" in actions.columns
+
+    assert len(scenarios) == 3
+    assert scenarios["expected_net_value"].notna().all()

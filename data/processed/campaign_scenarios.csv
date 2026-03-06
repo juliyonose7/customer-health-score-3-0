@@ -1,0 +1,4 @@
+scenario,customers_targeted,total_action_cost,expected_clv_saved,expected_net_value,avg_expected_roi,avg_churn_probability
+Top 5%,108,5284.0,442666.02,438006.02,108.121,1.0
+Top 10%,217,8759.0,587377.27,577812.27,68.1285,0.9995
+Top 20%,434,15144.0,803364.67,784034.67,44.6235,0.9994
