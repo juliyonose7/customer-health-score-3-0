@@ -32,6 +32,11 @@ Hybrid data analytics project to predict churn early by combining transactional 
 	- Load and validate files: `python -m src.data_loader`
 	- Run pipeline without synthetic generation: `python -m src.run_pipeline --skip-generate`
 
+## Quality Checks
+- Run tests: `pytest -q`
+- Run pipeline + tests in one script (PowerShell): `./scripts/run_all.ps1`
+- CI runs on `push` and `pull_request` using `.github/workflows/ci.yml`
+
 ## Suggested Environment
 ```powershell
 python -m venv .venv
